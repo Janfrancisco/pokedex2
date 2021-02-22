@@ -41,7 +41,7 @@ class ScreenGame extends CustomPainter {
     var centerX = size.width / 2;
     var centerY = size.height / 2;
     var center = Offset(centerX, centerY);
-    var center2 = Offset(centerX, centerY - 18);
+    var center2 = Offset(centerX, centerY - 10);
 
     Paint innerScreen = Paint()..color = AppColors.innerScreen;
 
@@ -60,9 +60,9 @@ class ScreenGame extends CustomPainter {
 
     var roundedFactor = 30.0;
     path.moveTo(0, 0 + roundedFactor);
-    path.lineTo(0, size.height - roundedFactor);
+    path.lineTo(0, size.height - 40);
     //path.quadraticBezierTo(0, size.height, roundedFactor, size.height);
-    path.lineTo(roundedFactor, size.height);
+    path.lineTo(40, size.height);
     path.lineTo(size.width - roundedFactor, size.height);
     path.quadraticBezierTo(
         size.width, size.height, size.width, size.height - roundedFactor);
@@ -78,8 +78,8 @@ class ScreenGame extends CustomPainter {
 
     //Size smallSize = size * 0.8;
     Path path2 = Path();
-    Rect inRect = Rect.fromCenter(width: 300, height: 160, center: center2);
-    RRect inRrect = RRect.fromRectAndRadius(inRect, Radius.circular(10));
+    Rect inRect = Rect.fromCenter(width: 300, height: 180, center: center2);
+    RRect inRrect = RRect.fromRectAndRadius(inRect, Radius.circular(8));
 
     canvas.drawRRect(inRrect, innerScreen);
 
