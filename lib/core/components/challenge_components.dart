@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:pokedex/core/colors/colors.dart';
+import 'dart:ui' as ui;
 
 class TopPanel extends CustomClipper<Path> {
   @override
@@ -136,5 +138,48 @@ class ButtomTop extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     // TODO: implement shouldRepaint
     return false;
+  }
+}
+
+//Add this CustomPaint widget to the Widget Tree
+
+//Copy this CustomPainter code to the Bottom of the File
+class RPSCustomPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
+    paint_0_fill.color = Color(0xffE5E5E5).withOpacity(0.5);
+    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint_0_fill);
+
+    Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
+    paint_1_fill.color = Colors.white.withOpacity(1.0);
+    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint_1_fill);
+
+    Path path_2 = Path();
+    path_2.moveTo(0, 0);
+    path_2.lineTo(size.width, 0);
+    path_2.lineTo(size.width, size.height * 0.2442284);
+    path_2.lineTo(size.width * 0.9135815, size.height * 0.2442284);
+    path_2.lineTo(size.width * 0.9135815, size.height * 0.08770304);
+    path_2.lineTo(size.width * 0.5901241, size.height * 0.08770304);
+    path_2.lineTo(size.width * 0.4185182, size.height * 0.2442284);
+    path_2.lineTo(0, size.height * 0.2442284);
+    path_2.lineTo(0, 0);
+    path_2.close();
+
+    Paint paint_2_stroke = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2;
+    paint_2_stroke.color = Color(0xffB82626).withOpacity(1.0);
+    canvas.drawPath(path_2, paint_2_stroke);
+
+    Paint paint_2_fill = Paint()..style = PaintingStyle.fill;
+    paint_2_fill.color = Color(0xffB82626).withOpacity(1.0);
+    canvas.drawPath(path_2, paint_2_fill);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
   }
 }

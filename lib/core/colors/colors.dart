@@ -16,6 +16,7 @@ class AppColors {
   static const Color pokeballWhiteBottom = const Color(0xffA19E9E);
   static const Color topSide = const Color(0xffcc1416);
   static const Color shadowTopSide = const Color(0xffa51a17);
+  static const Color innerScreen = const Color(0xff777474);
 
   //--------------------------------------------------------------------//
   //----------------------------Screen----------------------------------//
